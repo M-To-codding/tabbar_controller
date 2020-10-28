@@ -5,7 +5,10 @@ void main() => runApp(MyApp());
 
 /// This is the main application widget.
 class MyApp extends StatelessWidget {
+
+
   static const String _title = 'Flutter Code Sample';
+
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +49,10 @@ class MyStatelessWidget extends StatelessWidget {
 
         return MaterialApp(
           theme: ThemeData(
-            backgroundColor: Colors.white,
-            cardColor: Colors.white,
-            buttonColor: Colors.white,
-            bottomAppBarColor: Colors.black,
-
+            backgroundColor: Colors.green,
+            // cardColor: Colors.white,
+            // buttonColor: Colors.white,
+            // bottomAppBarColor: Colors.black,
             // brightness: Brightness.dark,
             //primaryColor: Colors.pink[200],
             //Changing this will change the color of the TabBar - ПІДПИСАНО
@@ -60,27 +62,7 @@ class MyStatelessWidget extends StatelessWidget {
             length: 3,
             child: Scaffold(
               backgroundColor: Colors.white,
-
               appBar: AppBar(
-                bottom: TabBar(
-                  indicatorColor: Colors.white,
-                  tabs: [
-                    Tab(
-                        icon: Icon(
-                      Icons.directions_car,
-                      color: Colors.black,
-                    )
-                        // title: Text('Dashboard'),
-                        ),
-                    Tab(icon: Icon(Icons.directions_transit)),
-                    Tab(icon: Icon(Icons.directions_bike)
-                        //   titile: const Text(
-                        //   'Dashboard',
-                        //   textAlign: TextAlign.center,
-                        // ),
-                        ),
-                  ],
-                ),
                 title: Text(
                   'Dashboard',
                   textAlign: TextAlign.center,
@@ -88,7 +70,86 @@ class MyStatelessWidget extends StatelessWidget {
                 centerTitle: true,
                 backgroundColor: Colors.red,
               ),
-              body: ListView(),
+              body:
+          //     ListView(
+          //       children: events
+          //           .map((e))=>Text(
+          //         e,
+          //       style:TextStyle(fontSize:100),
+          //     ))
+          //     .toList(),
+          //
+          // )
+          // )
+          //     )
+
+
+              Container(
+
+                  child: Column(
+
+
+                children: [
+                  TabBar(
+                    indicatorColor: Colors.green,
+                    labelPadding: EdgeInsets.all(0),
+                    tabs: [
+                      Tab(
+                        child: Container(
+                          color: Colors.blue,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.directions_car,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        // title: Text('Dashboard'),
+                      ),
+                      Tab(
+                          icon: Icon(
+                        Icons.directions_transit,
+                        color: Colors.red,
+                      )),
+                      Tab(icon: Icon(Icons.directions_bike)
+                          //   titile: const Text(
+                          //   'Dashboard',
+                          //   textAlign: TextAlign.center,
+                          // ),
+                          ),
+                    ],
+                  ),
+                  // ListView(),
+
+                  SizedBox(//alt+enter
+
+                    height: MediaQuery.of(context).size.height * 0.75,
+                    child: ListView(
+                      padding: const EdgeInsets.all(8),
+                      children: <Widget>[
+                        Container(
+                          height: 50,
+                          color: Colors.amber[600],
+                          child: const Center(child: Text('Entry A')),
+                        ),
+                        Container(
+                          height: 50,
+                          color: Colors.amber[500],
+                          child: const Center(child: Text('Entry B')),
+                        ),
+                        Container(
+                          height: 70,
+                          color: Colors.amber[100],
+                          child: const Center(child: Text('Entry C')),
+                        ),
+                      ],
+                    ),
+                  )
+
+                ],
+              )),
+
               //     final List<String> entries = <String>['A', 'B', 'C'];
               // final List<int> colorCodes = <int>[600, 500, 100];
 
